@@ -1,0 +1,153 @@
+﻿@section Scripts {
+    @Scripts.Render("~/Scripts/MyScript.js")
+
+}
+<div id="logeduserinfo" style="width:650px;margin:auto;"></div>
+
+<div id="logininfo" style="width:550px;margin:auto" class="shown">
+    <h3 class="text-center"><b>Korisnik nije prijavljen na sistem</b></h3>
+
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="button" class="btn col-sm-3 btn-default" value="Registracija" id="regbtnswitch" style="background-color:lightpink">
+    </div>
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="button" class="btn col-sm-3" value="Prijava" id="logbtnswitch" style="background-color: lightblue;">
+    </div>
+
+</div>
+
+<form class="form-horizontal hidden" style="width:650px; margin:auto; " id="loginform">
+    <h3 class="text-center"><b>Prijava korisnika</b></h3>
+    <div class="form-group" style="margin-top:20px;display:flex;justify-content:center;">
+        <label for="inputEmaillogin" class="col-sm-2" style="align-self:center;">Email:</label>
+        <div class="col-sm-7" id="usernamelogin">
+            <input type="email" class="form-control" id="inputEmaillogin">
+        </div>
+    </div>
+    <p id="loginusernameerr" class="text-center" style="color:red;"></p>
+    <div class="form-group" style="margin-top:20px;display:flex;justify-content:center;">
+        <label for="inputPasswordlogin" class="col-sm-2" style="align-self:center;">Lozinka:</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="inputPasswordlogin">
+        </div>
+    </div>
+    <p id="loginpasserr" class="text-center" style="color:red;"></p>
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="submit" class="btn col-sm-3 btn-default" value="Prijavi se" id="loginbtn" style="background-color: lightblue;">
+    </div>
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="button" class="btn col-sm-3 btn-default" value="Odustajanje" id="dismisbtninput">
+    </div>
+</form>
+
+
+<form class="form-horizontal hidden" style="width:650px; margin:auto; " id="registrationform">
+    <h3 class="text-center"><b>Registracija korisnika</b></h3>
+    <div class="form-group" style="margin-top:20px;display:flex;justify-content:center;">
+        <label for="inputEmailregist" class="col-sm-4" style="align-self:center;">Email:</label>
+        <div class="col-sm-7" id="usernamelogin">
+            <input type="email" class="form-control" id="inputEmailregist">
+        </div>
+    </div>
+    <p id="regusernameerr" class="text-center" style="color:red;"></p>
+    <div class="form-group" style="margin-top:20px;display:flex;justify-content:center;">
+        <label for="inputPasswordreg1" class="col-sm-4" style="align-self:center;">Lozinka:</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="inputPasswordreg1">
+        </div>
+    </div>
+    <p id="regpass1err" class="text-center" style="color:red;"></p>
+    <div class="form-group" style="margin-top:20px;display:flex;justify-content:center;">
+        <label for="inputPasswordreg2" class="col-sm-4" style="align-self:center;">Potvrdi Lozinku:</label>
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="inputPasswordreg2">
+        </div>
+    </div>
+    <p id="regpass2err" class="text-center" style="color:red;"></p>
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="submit" class="btn col-sm-3 btn-default" value="Registruj se" style="background-color: lightpink;">
+    </div>
+    <div class="row" style="margin-top:20px;display:flex;justify-content:center;">
+        <input type="button" class="btn col-sm-3 btn-default" value="Odustajanje" id="dismisbtninput">
+    </div>
+</form>
+
+
+
+<form class="form-horizontal hidden" id="searchform" style=" margin:auto;margin-top:30px;">
+
+
+    <div style="display:grid;justify-content:center">
+        <p style="text-align:center;">Pretraga putnika po godini rodjenja:</p>
+        <div class="form-group" style="width:550px;text-align:left;">
+            <label for="inputStartSearch" class="col-sm-2">Najmanje:</label>
+            <input type="text" class="form-control"  id="inputStartSearch">
+           
+        </div>
+        <p id="psearchstarterr" class="text-center" style="color:red;"></p>
+
+        <div class="form-group" style="width: 550px; text-align: left;">
+            <label for="inputEndSearch" class="col-sm-2 col-form-label">Najvise:</label>
+            <input type="text" class="form-control" style="display:inline-block;" id="inputEndSearch">
+            <input type="submit" class="btn  btn-default" value="Trazi" id="btnSearch" style="background-color: greenyellow;margin-left:10px;width:100px;" />
+        </div>
+        <p id="psearchenderr" class="text-center" style="color:red;"></p>
+    </div>
+</form>
+
+
+
+<div id="Passengersinfo"></div>
+
+
+<form class="form-horizontal hidden" style="width:450px; margin:auto; " id="addPassengerform">
+    <h3 class="text-center"><b>Dodavanje novog putnika</b></h3>
+    <div class="form-group row">
+        <label for="inputBus" class="col-sm-5">Autobus:</label>
+        <div class="col-sm-7">
+            <select class="form-control" id="inputBus" name="inputBus"></select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="inputName" class="col-sm-5">Ime i prezime:</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputName">
+        </div>
+    </div>
+    <p id="nameerro" class="text-center" style="color:red;"></p>
+
+    <div class="form-group">
+        <label for="inputAdress" class="col-sm-5">Adresa:</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputAdress">
+        </div>
+    </div>
+    <p id="adresserr" class="text-center" style="color:red;"></p>
+
+    <div class="form-group">
+        <label for="inputYear" class="col-sm-5">Godina rodjenja:</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputYear">
+        </div>
+    </div>
+    <p id="Yearerro" class="text-center" style="color:red;"></p>
+
+    <div class="form-group">
+        <label for="inputCardType" class="col-sm-5">Tip karte:</label>
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputCardType">
+        </div>
+    </div>
+    <p id="typeerro" class="text-center" style="color:red;"></p>
+
+
+    <div style="display:flex;justify-content:center;">
+        <input type="submit" class="btn btn-default" style="width:150px;background-color:greenyellow;margin:20px 0;"  value="Dodavanje">
+     </div>
+    <div style="display:flex;justify-content:center;">
+        <input type="button" class="btn btn-default" style="width:150px" id="clearaddform" value="Odustajanje">
+    </div>
+</form>
+
